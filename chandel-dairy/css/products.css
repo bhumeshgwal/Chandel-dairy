@@ -1,0 +1,63 @@
+/* =====================================================
+   PRODUCTS.CSS  (card styles home.css mein hain)
+   ===================================================== */
+
+/* ---------- FILTER TABS ---------- */
+.filter-bar {
+  position: sticky; top: var(--nav-height); z-index: 50;
+  background: rgba(255,248,225,.95); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding-block: var(--space-3);
+}
+.tabs {
+  display: flex; gap: var(--space-2);
+  overflow-x: auto; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-block: var(--space-1);
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex-shrink: 0;
+  padding: .6em 1.3em; min-height: 42px;
+  border-radius: var(--radius-pill);
+  background: var(--cream); color: var(--maroon);
+  border: 2px solid var(--line);
+  font-weight: 500; font-size: var(--fs-sm);
+  transition: all var(--speed) var(--ease);
+}
+.tab:hover { border-color: var(--saffron); }
+.tab.active { background: var(--maroon); color: var(--butter); border-color: var(--maroon); box-shadow: var(--shadow-1); }
+
+/* ---------- CATEGORY BLOCKS ---------- */
+.cat-block { padding-block: var(--space-7); }
+.cat-block[hidden] { display: none; }
+.cat-block:nth-child(even) { background: var(--butter-deep); }
+.cat-block__head { text-align: center; max-width: 620px; margin: 0 auto var(--space-6); padding-inline: var(--gutter); }
+.cat-block__head p { margin-top: var(--space-3); }
+.cat-block .product-grid { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* single item categories look centered instead of stuck to the left */
+@media (min-width: 600px) {
+  .product-grid { justify-content: center; }
+}
+
+/* ---------- QUALITY STRIP ---------- */
+.quality { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+.quality__item { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-5); }
+.quality__ico {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.6rem;
+  background: var(--maroon); color: var(--marigold);
+}
+.quality__item h4 { margin-bottom: var(--space-1); }
+.quality__item p { font-size: var(--fs-sm); }
+
+.price-note {
+  margin: var(--space-6) auto 0; max-width: 640px; text-align: center;
+  padding: var(--space-4) var(--space-5);
+  background: var(--cream); border: 2px dashed var(--saffron); border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 768px)  { .quality { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .quality { grid-template-columns: repeat(4, 1fr); } .quality__item { flex-direction: column; text-align: center; align-items: center; } }
