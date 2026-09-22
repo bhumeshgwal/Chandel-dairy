@@ -1,0 +1,128 @@
+/* =====================================================
+   HOME.CSS
+   ===================================================== */
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(244,180,26,.22) 0, transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(14,107,107,.14) 0, transparent 40%),
+    var(--butter);
+  padding-block: clamp(2.5rem, 1.5rem + 5vw, 6rem) clamp(4rem, 3rem + 6vw, 8rem);
+}
+.hero::before {                    /* paper-cut layered hills at the bottom */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+  background:
+    radial-gradient(ellipse 60px 34px at 50% 100%, var(--butter-deep) 98%, transparent 100%) 0 100% / 120px 90px repeat-x;
+}
+.hero__grid { display: grid; gap: var(--space-7); grid-template-columns: 1fr; align-items: center; position: relative; }
+.hero__copy { text-align: center; }
+.hero__copy .badge { margin-bottom: var(--space-4); }
+.hero__copy h1 { margin-bottom: var(--space-4); }
+.hero__copy h1 em { font-style: normal; color: var(--saffron); }
+.hero__copy .lead { font-size: var(--fs-lg); max-width: 34ch; margin-inline: auto; margin-bottom: var(--space-6); }
+.hero__copy .btn-row { justify-content: center; }
+.hero__hindi { font-size: var(--fs-lg); color: var(--peacock); margin-bottom: var(--space-3); }
+
+.hero__art { display: grid; place-items: center; position: relative; }
+.hero__arch { width: min(78vw, 380px); aspect-ratio: 3/4; }
+.hero__logo {
+  width: 100%; height: 100%; object-fit: cover; background: var(--cream);
+}
+.hero__ring {
+  position: absolute; width: min(92vw, 470px); aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px dashed var(--marigold); opacity: .6;
+  animation: spin 60s linear infinite;
+}
+.hero__ring--2 { width: min(70vw, 340px); border-color: var(--saffron); animation-direction: reverse; animation-duration: 45s; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero__ring { animation: none; } }
+
+/* ---------- STATS STRIP ---------- */
+.stats { margin-top: calc(var(--space-7) * -1); position: relative; z-index: 3; }
+.stats__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+.stat { text-align: center; padding: var(--space-5) var(--space-3); }
+.stat__num { font-family: var(--font-heading); font-size: var(--fs-2xl); font-weight: 800; color: var(--saffron); line-height: 1; }
+.stat__label { font-size: var(--fs-sm); margin-top: var(--space-2); color: var(--ink-soft); font-weight: 500; }
+
+/* ---------- CATEGORY STRIP ---------- */
+.cat-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+.cat-tile {
+  text-align: center; padding: var(--space-5) var(--space-3);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+}
+.cat-tile__icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.8rem;
+  background: var(--butter-deep); border: 2px solid var(--marigold);
+}
+.cat-tile h4 { font-size: var(--fs-base); }
+.cat-tile p  { font-size: var(--fs-xs); }
+
+/* ---------- PRODUCT CARD (shared with products page) ---------- */
+.product { overflow: hidden; display: flex; flex-direction: column; }
+.product__img { aspect-ratio: 4/3; border-bottom: 3px solid var(--marigold); }
+.product__body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
+.product__hi { color: var(--peacock); font-size: var(--fs-sm); }
+.product__name { font-size: var(--fs-lg); }
+.product__note { font-size: var(--fs-sm); flex: 1; }
+.product__price {
+  margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px dashed var(--line);
+  display: flex; align-items: baseline; gap: .35em;
+}
+.product__price strong { font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--saffron); }
+.product__price span { color: var(--ink-soft); font-size: var(--fs-sm); }
+
+/* ---------- WHY US ---------- */
+.why { padding: var(--space-6) var(--space-5); text-align: center; }
+.why__icon {
+  width: 72px; height: 72px; margin: 0 auto var(--space-4);
+  display: grid; place-items: center; font-size: 2rem;
+  background: var(--maroon); color: var(--marigold); border-radius: 50%;
+  outline: 3px solid var(--marigold); outline-offset: 4px;
+}
+.why h4 { margin-bottom: var(--space-2); }
+.why p  { font-size: var(--fs-sm); }
+
+/* ---------- GENERATIONS TEASER ---------- */
+.gen-row { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+.gen { text-align: center; padding: var(--space-6) var(--space-5); }
+.gen__year { font-family: var(--font-heading); color: var(--saffron); font-size: var(--fs-xl); font-weight: 800; }
+.gen__name { color: var(--maroon); margin: var(--space-2) 0; }
+.gen p { font-size: var(--fs-sm); }
+.gen--now { background: var(--maroon); border-color: var(--maroon); }
+.gen--now .gen__name { color: var(--marigold); }
+.gen--now .gen__year { color: var(--butter); }
+.gen--now p { color: rgba(255,248,225,.85); }
+
+/* ---------- LOCATION MINI + CTA ---------- */
+.visit { padding: var(--space-6); }
+.visit__row { display: flex; gap: var(--space-4); align-items: flex-start; padding-block: var(--space-3); border-bottom: 1px dashed var(--line); }
+.visit__row:last-of-type { border-bottom: 0; }
+.visit__ico { font-size: 1.5rem; }
+.visit__row strong { display: block; color: var(--maroon); }
+
+.cta { text-align: center; }
+.cta h2 { margin-bottom: var(--space-4); }
+.cta .btn-row { justify-content: center; margin-top: var(--space-6); }
+.cta .btn--ghost { background: transparent; color: var(--butter); border-color: var(--butter); }
+.cta .btn--ghost:hover { background: var(--butter); color: var(--maroon); }
+
+/* ---------- TABLET ---------- */
+@media (min-width: 600px) {
+  .stats__grid { grid-template-columns: repeat(4, 1fr); }
+  .cat-strip { grid-template-columns: repeat(3, 1fr); }
+  .gen-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- LAPTOP ---------- */
+@media (min-width: 1024px) {
+  .hero__grid { grid-template-columns: 1.15fr 1fr; }
+  .hero__copy { text-align: left; }
+  .hero__copy .lead { margin-inline: 0; }
+  .hero__copy .btn-row { justify-content: flex-start; }
+  .cat-strip { grid-template-columns: repeat(5, 1fr); }
+  .grid--products { grid-template-columns: repeat(4, 1fr); }
+}
