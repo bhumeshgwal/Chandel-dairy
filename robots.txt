@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhumeshom-lab.github.io/Chandel-dairy/sitemap.xml
+Sitemap: https://bhumeshgwal.github.io/Chandel-dairy/sitemap.xml
