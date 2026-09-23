@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://bhumeshom-lab.github.io/Chandel-dairy/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://bhumeshom-lab.github.io/Chandel-dairy/products.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Location Page -->
+  <url>
+    <loc>https://bhumeshom-lab.github.io/Chandel-dairy/location.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://bhumeshom-lab.github.io/Chandel-dairy/contact.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://bhumeshom-lab.github.io/Chandel-dairy/about.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>
